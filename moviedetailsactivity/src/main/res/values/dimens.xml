@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standart_margin">16dp</dimen>
+    <dimen name="storyline_top">16dp</dimen>
+    <dimen name="star_top">3dp</dimen>
+    <dimen name="image_margin">3dp</dimen>
+    <dimen name="preview_image_height">240dp</dimen>
+
+    <dimen name="text_1">28sp</dimen>
+    <dimen name="text_2">40sp</dimen>
+    <dimen name="text_3">14sp</dimen>
+    <dimen name="text_4">20sp</dimen>
+    <dimen name="text_5">12sp</dimen>
+</resources>

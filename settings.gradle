@@ -1,2 +1,4 @@
+include ':moviedetailsactivity'
+include ':app:movieapp'
 include ':app'
 rootProject.name = "Android Foundation Workshops"
