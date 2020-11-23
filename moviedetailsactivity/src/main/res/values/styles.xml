@@ -2,4 +2,95 @@
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">@color/black</item>
     </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 40sp
+    -->
+    <style name="titile_style">
+        <item name="android:textSize">40sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">#ECECEC</item>
+        <item name="android:shadowColor">#80000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">6</item>
+        <item name="android:shadowRadius">12</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 14sp
+    -->
+    <style name="age_style">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 20sp
+        (identical to box height)
+    -->
+    <style name="genre_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FF3466</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 20sp
+        (identical to box height)
+    -->
+    <style name="count_review_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#6D6D80</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 20sp
+        (identical to box height)
+        -->
+    <style name="storyline_head_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#ECECEC</item>
+        <item name="android:shadowColor">#80000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">6</item>
+        <item name="android:shadowRadius">12</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 20sp
+    -->
+    <style name="storyline_body_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 24sp
+        (identical to box height)
+    -->
+    <style name="cast_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:shadowColor">#80000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">6</item>
+        <item name="android:shadowRadius">12</item>
+        <item name="android:textColor">#ECECEC</item>
+    </style>
+
+    <!--
+        Font family: Roboto
+        Line height: 16sp
+    -->
+    <style name="actor_style">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#D8D8D8</item>
+    </style>
+
 </resources>
