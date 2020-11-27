@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MovieDetailsActivity</string>
+    <string name="advangers_movie_name">Advangers:\nEnd Game</string>
+    <string name="back">Back</string>
+    <string name="back_dir"><![CDATA[<]]></string>
+    <string name="age13">13+</string>
+    <string name="genre_t">Action, Adventure, Fantasy</string>
+    <string name="storyline_head_t">Storyline</string>
+    <string name="storyline_body_t">After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.</string>
+    <string name="review_count_t">125 REVIEWS</string>
+    <string name="cast_t">Cast</string>
+    <string name="actor_1_t">Robert Downey Jr.</string>
+    <string name="actor_2_t">Chris Evans</string>
+    <string name="actor_3_t">Mark Ruffalo</string>
+    <string name="actor_4_t">Chris Hemsworth</string>
+    <string name="movies_list_t">Movies list</string>
+    <string name="movie_title_t">Advangers: End Game</string>
+    <string name="movie_duration_t">137 MIN</string>
+</resources>

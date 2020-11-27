@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standart_margin">16dp</dimen>
+    <dimen name="storyline_top">16dp</dimen>
+    <dimen name="star_top">3dp</dimen>
+    <dimen name="image_margin">3dp</dimen>
+    <dimen name="preview_image_height">240dp</dimen>
+    <dimen name="oval_top">56dp</dimen>
+    <dimen name="movies_list_top">55dp</dimen>
+    <dimen name="movies_list_start">8dp</dimen>
+    <dimen name="movie_top">18dp</dimen>
+    <dimen name="movie_start">12dp</dimen>
+    <dimen name="genre_start">18dp</dimen>
+    <dimen name="genre_top">316dp</dimen>
+    <dimen name="star_top_2">332dp</dimen>
+    <dimen name="star_start_2">18dp</dimen>
+    <dimen name="star_end">2dp</dimen>
+
+    <dimen name="text_1">28sp</dimen>
+    <dimen name="text_2">40sp</dimen>
+    <dimen name="text_3">14sp</dimen>
+    <dimen name="text_4">20sp</dimen>
+    <dimen name="text_5">12sp</dimen>
+</resources>

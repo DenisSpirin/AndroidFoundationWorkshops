@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvDuration" type="id" />
+    <item name="ivDoubleOval" type="id" />
+    <item name="tvMoviesList" type="id" />
+    <item name="ivMovie" type="id" />
+    <item name="tvMovieTitle" type="id" />
+</resources>
