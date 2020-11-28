@@ -10,8 +10,10 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentMoviesList = FragmentMoviesList().apply {  }
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.main_container, fragmentMoviesList)
-            .commit()
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.main_container, fragmentMoviesList)
+                .commit()
+        }
     }
 }
