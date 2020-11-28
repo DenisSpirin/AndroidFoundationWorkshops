@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment
 class FragmentMoviesList : Fragment(), ClickListener {
 
     var movieCard: CardView? = null
-    var fragmentMoviesDetails: FragmentMoviesDetails = FragmentMoviesDetails().apply { setClickListener(this@FragmentMoviesList) }
+    //var fragmentMoviesDetails: FragmentMoviesDetails = FragmentMoviesDetails().apply { setClickListener(this@FragmentMoviesList) }
+    var fragmentMoviesDetails: FragmentMoviesDetails? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,15 +24,16 @@ class FragmentMoviesList : Fragment(), ClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        movieCard = view.findViewById<CardView>(R.id.cardView).apply {
-            setOnClickListener {
-                activity?.supportFragmentManager?.beginTransaction()
-                        ?.add(R.id.main_container, fragmentMoviesDetails)
+            fragmentMoviesDetails = FragmentMoviesDetails().apply { setClickListener(this@FragmentMoviesList) }
+            movieCard = view.findViewById<CardView>(R.id.cardView).apply {
+                setOnClickListener {
+                    activity?.supportFragmentManager?.beginTransaction()
+                        ?.add(R.id.main_container, fragmentMoviesDetails!!)
                         ?.addToBackStack(null)
+                        //?.disallowAddToBackStack()
                         ?.commit()
+                }
             }
-        }
-
     }
 
     override fun goBack() {
@@ -42,6 +44,7 @@ class FragmentMoviesList : Fragment(), ClickListener {
                     remove(lastFragment!!)
                     commit()
                 }
+            //activity?.supportFragmentManager?.popBackStack()
         }
     }
 }

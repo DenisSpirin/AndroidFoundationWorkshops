@@ -5,6 +5,7 @@ import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
     private var fragmentMoviesList: FragmentMoviesList? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,5 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val MOVIE_LIST_FRAGMENT_TAG = "FragmentMoviesList"
+        const val MOVIE_DETAILS_FRAGMENT_TAG = "FragmentMoviesDetails"
     }
 }
