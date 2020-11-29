@@ -23,7 +23,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/movie_s_image" />
 
         <TextView
             android:id="@+id/tvBackDir"
@@ -57,8 +58,7 @@
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textAppearance="@style/age_style"
-            android:textFontWeight="900"/>
+            android:textAppearance="@style/age_style"/>
 
         <!--
     android:textColor="@color/white"
@@ -76,7 +76,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mask"
             android:textAppearance="@style/titile_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <TextView
@@ -89,8 +88,7 @@
             android:layout_marginEnd="@dimen/standart_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitile"
-            android:textAppearance="@style/genre_style"
-            android:textFontWeight="300" />
+            android:textAppearance="@style/genre_style" />
 
         <ImageView
             android:id="@+id/ivStar1"
@@ -100,7 +98,8 @@
             android:layout_marginStart="@dimen/standart_margin"
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
+            android:contentDescription="@string/star" />
 
         <ImageView
             android:id="@+id/ivStar2"
@@ -109,7 +108,8 @@
             android:layout_marginTop="@dimen/star_top"
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/ivStar1"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
+            android:contentDescription="@string/star"/>
 
         <ImageView
             android:id="@+id/ivStar3"
@@ -118,7 +118,8 @@
             android:layout_marginTop="@dimen/star_top"
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/ivStar2"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
+            android:contentDescription="@string/star"/>
 
         <ImageView
             android:id="@+id/ivStar4"
@@ -127,7 +128,8 @@
             android:layout_marginTop="@dimen/star_top"
             android:src="@drawable/ic_star_icon"
             app:layout_constraintStart_toEndOf="@id/ivStar3"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
+            android:contentDescription="@string/star"/>
 
         <ImageView
             android:id="@+id/ivStar5"
@@ -136,7 +138,8 @@
             android:layout_marginTop="@dimen/star_top"
             android:src="@drawable/ic_star_icon_gray"
             app:layout_constraintStart_toEndOf="@id/ivStar4"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
+            android:contentDescription="@string/star" />
 
         <TextView
             android:id="@+id/tvCountReview"
@@ -148,7 +151,6 @@
             app:layout_constraintStart_toEndOf="@+id/ivStar5"
             app:layout_constraintTop_toBottomOf="@+id/tvGenre"
             style="@style/count_review_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <TextView
@@ -164,7 +166,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivStar1"
             style="@style/storyline_head_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <TextView
@@ -177,8 +178,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvStorylineHead"
-            style="@style/storyline_body_style"
-            android:textFontWeight="300"/>
+            style="@style/storyline_body_style" />
 
         <TextView
             android:id="@+id/tvCast"
@@ -193,7 +193,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvStorylineBody"
             style="@style/cast_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <ImageView
@@ -210,7 +209,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tvCast"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             android:layout_marginTop="@dimen/image_margin"
-            android:layout_marginStart="@dimen/standart_margin"/>
+            android:layout_marginStart="@dimen/standart_margin"
+            android:contentDescription="@string/actor_s_image" />
 
         <ImageView
             android:id="@+id/ivActor2"
@@ -224,7 +224,8 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ivActor1"
             app:layout_constraintTop_toBottomOf="@+id/tvCast"
-            android:layout_margin="@dimen/image_margin"/>
+            android:layout_margin="@dimen/image_margin"
+            android:contentDescription="@string/actor_s_image" />
 
         <ImageView
             android:id="@+id/ivActor3"
@@ -238,7 +239,8 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ivActor2"
             app:layout_constraintTop_toBottomOf="@+id/tvCast"
-            android:layout_margin="@dimen/image_margin" />
+            android:layout_margin="@dimen/image_margin"
+            android:contentDescription="@string/actor_s_image" />
 
         <ImageView
             android:id="@+id/ivActor4"
@@ -253,7 +255,8 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/ivActor3"
-            app:layout_constraintTop_toBottomOf="@+id/tvCast" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCast"
+            android:contentDescription="@string/actor_s_image" />
 
         <TextView
             android:id="@+id/tvActor1"
@@ -265,7 +268,6 @@
             app:layout_constraintEnd_toEndOf="@id/ivActor1"
             app:layout_constraintTop_toBottomOf="@id/ivActor1"
             style="@style/cast_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <TextView
@@ -278,7 +280,6 @@
             app:layout_constraintEnd_toEndOf="@id/ivActor2"
             app:layout_constraintTop_toBottomOf="@id/ivActor2"
             style="@style/cast_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <TextView
@@ -291,7 +292,6 @@
             app:layout_constraintEnd_toEndOf="@id/ivActor3"
             app:layout_constraintTop_toBottomOf="@id/ivActor3"
             style="@style/cast_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
         <TextView
@@ -304,7 +304,6 @@
             app:layout_constraintEnd_toEndOf="@id/ivActor4"
             app:layout_constraintTop_toBottomOf="@id/ivActor4"
             style="@style/cast_style"
-            android:textFontWeight="900"
             android:textStyle="bold"/>
 
 
