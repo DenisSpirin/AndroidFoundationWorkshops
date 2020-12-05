@@ -202,124 +202,12 @@
             android:orientation="horizontal"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCast" />
-
-        <!--
-        <ImageView
-            android:id="@+id/ivActor1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_weight="1"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/actor_1"
-            app:layout_constraintEnd_toStartOf="@+id/ivActor2"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCast"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            android:layout_marginTop="@dimen/image_margin"
-            android:layout_marginStart="@dimen/standart_margin"
-            android:contentDescription="@string/actor_s_image" />
-
-        <ImageView
-            android:id="@+id/ivActor2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_weight="1"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/actor_2"
-            app:layout_constraintEnd_toStartOf="@+id/ivActor3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/ivActor1"
-            app:layout_constraintTop_toBottomOf="@+id/tvCast"
-            android:layout_margin="@dimen/image_margin"
-            android:contentDescription="@string/actor_s_image" />
-
-        <ImageView
-            android:id="@+id/ivActor3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_weight="1"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:src="@drawable/actor_3"
-            app:layout_constraintEnd_toStartOf="@+id/ivActor4"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/ivActor2"
-            app:layout_constraintTop_toBottomOf="@+id/tvCast"
-            android:layout_margin="@dimen/image_margin"
-            android:contentDescription="@string/actor_s_image" />
-
-        <ImageView
-            android:id="@+id/ivActor4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/image_margin"
-            android:layout_marginEnd="@dimen/standart_margin"
-            android:src="@drawable/actor_4"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@+id/ivActor3"
-            app:layout_constraintTop_toBottomOf="@+id/tvCast"
-            android:contentDescription="@string/actor_s_image" />
-
-        <TextView
-            android:id="@+id/tvActor1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|start"
-            android:text="@string/actor_1_t"
-            app:layout_constraintStart_toStartOf="@id/ivActor1"
-            app:layout_constraintEnd_toEndOf="@id/ivActor1"
-            app:layout_constraintTop_toBottomOf="@id/ivActor1"
-            style="@style/cast_style"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvActor2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|start"
-            android:text="@string/actor_2_t"
-            app:layout_constraintStart_toStartOf="@id/ivActor2"
-            app:layout_constraintEnd_toEndOf="@id/ivActor2"
-            app:layout_constraintTop_toBottomOf="@id/ivActor2"
-            style="@style/cast_style"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvActor3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|start"
-            android:text="@string/actor_3_t"
-            app:layout_constraintStart_toStartOf="@id/ivActor3"
-            app:layout_constraintEnd_toEndOf="@id/ivActor3"
-            app:layout_constraintTop_toBottomOf="@id/ivActor3"
-            style="@style/cast_style"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvActor4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|start"
-            android:text="@string/actor_4_t"
-            app:layout_constraintStart_toStartOf="@id/ivActor4"
-            app:layout_constraintEnd_toEndOf="@id/ivActor4"
-            app:layout_constraintTop_toBottomOf="@id/ivActor4"
-            style="@style/cast_style"
-            android:textStyle="bold"/>
-        -->
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
