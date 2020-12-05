@@ -37,6 +37,17 @@
                 card_view:layout_constraintStart_toStartOf="parent"
                 />
 
+            <ImageView
+                android:id="@+id/ivLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/like_button_t"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="6dp"
+                tools:src="@drawable/ic_like"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tvGenre"
                 android:layout_width="wrap_content"

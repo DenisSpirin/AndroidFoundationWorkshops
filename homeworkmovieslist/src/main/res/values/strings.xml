@@ -17,6 +17,7 @@
     <string name="movie_title_t">Avangers: End Game</string>
     <string name="movie_duration_t">137 MIN</string>
     <string name="movie_s_image">movie\'s image</string>
+    <string name="like_button_t">button to like</string>
     <string name="star">star</string>
     <string name="actor_s_image">actor\'s image</string>
     <string name="oval_image">oval image</string>

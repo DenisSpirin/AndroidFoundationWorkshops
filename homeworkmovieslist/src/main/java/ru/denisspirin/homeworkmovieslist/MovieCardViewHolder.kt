@@ -20,6 +20,7 @@ class MovieCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val tvCountReview: TextView = view.findViewById(R.id.tvCountReview)
     private val tvMovieTitle: TextView = view.findViewById(R.id.tvMovieTitle)
     private val tvDuration: TextView = view.findViewById(R.id.tvDuration)
+    private val ivLike: ImageView = view.findViewById(R.id.ivLike)
 
     fun onBind(movie: Movie) {
         ivMovie.setImageResource(context.resources.getIdentifier(movie.image, "drawable", context.packageName))
@@ -28,6 +29,10 @@ class MovieCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         tvCountReview.text = context.getString(R.string.count_review, movie.countReview)
         tvMovieTitle.text = movie.title
         tvDuration.text = context.getString(R.string.duration, movie.duration)
+        when (movie.isLiked) {
+            true -> ivLike.setImageResource(R.drawable.ic_like_clicked)
+            else -> ivLike.setImageResource(R.drawable.ic_like)
+        }
     }
 
 }
