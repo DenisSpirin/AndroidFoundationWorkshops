@@ -1,4 +1,4 @@
-include ':homework3uicomponents2'
+include ':homeworkmovieslist'
 include ':moviedetailsactivity'
 include ':app:movieapp'
 include ':app'
