@@ -1,10 +1,12 @@
-package ru.denisspirin.homeworkmovieslist
+package ru.denisspirin.homeworkmovieslist.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.denisspirin.homework3uicomponents2.R
+import ru.denisspirin.homeworkmovieslist.MoviesListItemClickListener
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
+import ru.denisspirin.homeworkmovieslist.viewholders.MovieCardViewHolder
 
 class MoviesAdapter(
     private val itemClickListener: MoviesListItemClickListener

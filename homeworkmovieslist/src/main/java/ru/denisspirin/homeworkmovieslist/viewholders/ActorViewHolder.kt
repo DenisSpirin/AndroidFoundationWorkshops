@@ -1,4 +1,4 @@
-package ru.denisspirin.homeworkmovieslist
+package ru.denisspirin.homeworkmovieslist.viewholders
 
 import android.content.Context
 import android.view.View

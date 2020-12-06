@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.denisspirin.homework3uicomponents2.R
+import ru.denisspirin.homeworkmovieslist.adapters.ActorsAdapter
 import ru.denisspirin.homeworkmovieslist.data.models.DataSource
 
 class FragmentMoviesDetails : Fragment() {

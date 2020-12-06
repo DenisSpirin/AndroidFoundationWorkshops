@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.denisspirin.homework3uicomponents2.R
-import ru.denisspirin.homeworkmovieslist.data.models.Movie
+import ru.denisspirin.homeworkmovieslist.adapters.MoviesAdapter
 import ru.denisspirin.homeworkmovieslist.data.models.DataSource
 
 class FragmentMoviesList : Fragment() {

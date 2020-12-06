@@ -7,5 +7,6 @@ data class Movie (
     val countReview: Int,
     val title: String,
     val duration: Int,
-    val isLiked: Boolean
+    val isLiked: Boolean,
+    val rating: Int
 )
