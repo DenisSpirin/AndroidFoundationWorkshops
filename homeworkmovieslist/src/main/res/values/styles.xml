@@ -3,6 +3,13 @@
         <item name="colorPrimary">@color/black</item>
     </style>
 
+    <style name="CustomRatingBar" paremnt="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+    </style>
+    <style name="CustomRatingBarSmall" paremnt="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar_small</item>
+    </style>
+
     <!--
         Font family: Roboto
         Line height: 40sp

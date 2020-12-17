@@ -1,4 +1,4 @@
-package ru.denisspirin.homeworkmovieslist
+package ru.denisspirin.homeworkmovieslist.listeners
 
 interface MoviesDetailsBackClickListener {
     fun goBack()

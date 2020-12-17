@@ -19,7 +19,6 @@ class ActorsAdapter : RecyclerView.Adapter<ActorViewHolder>() {
 
     override fun onBindViewHolder(holder: ActorViewHolder, position: Int) {
         holder.onBind(actors[position])
-        // todo setOnClickListener
     }
 
     fun bindActors(newActors: List<Actor>) {

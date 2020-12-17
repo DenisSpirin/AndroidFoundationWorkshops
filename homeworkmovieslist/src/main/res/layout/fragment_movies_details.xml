@@ -15,11 +15,12 @@
         tools:context="ru.denisspirin.homeworkmovieslist.MainActivity">
 
         <ImageView
-            android:id="@+id/mask"
+            android:id="@+id/ivMask"
             android:layout_width="0dp"
             android:layout_height="@dimen/preview_image_height"
             android:scaleType="centerCrop"
             android:src="@drawable/background"
+            android:foreground="@drawable/gradient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +75,7 @@
             android:layout_marginStart="@dimen/standart_margin"
             android:layout_marginEnd="@dimen/standart_margin"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mask"
+            app:layout_constraintTop_toBottomOf="@id/ivMask"
             android:textAppearance="@style/titile_style"
             android:textStyle="bold"/>
 
@@ -90,56 +91,16 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTitile"
             android:textAppearance="@style/genre_style" />
 
-        <ImageView
-            android:id="@+id/ivStar1"
+        <RatingBar
+            android:id="@+id/rbMovieDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/star_top"
-            android:layout_marginStart="@dimen/standart_margin"
-            android:src="@drawable/ic_star_icon"
+            style="@style/CustomRatingBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvGenre"
-            android:contentDescription="@string/star" />
-
-        <ImageView
-            android:id="@+id/ivStar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/star_top"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/ivStar1"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
-            android:contentDescription="@string/star"/>
-
-        <ImageView
-            android:id="@+id/ivStar3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/star_top"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/ivStar2"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
-            android:contentDescription="@string/star"/>
-
-        <ImageView
-            android:id="@+id/ivStar4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/star_top"
-            android:src="@drawable/ic_star_icon"
-            app:layout_constraintStart_toEndOf="@id/ivStar3"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
-            android:contentDescription="@string/star"/>
-
-        <ImageView
-            android:id="@+id/ivStar5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/star_top"
-            android:src="@drawable/ic_star_icon_gray"
-            app:layout_constraintStart_toEndOf="@id/ivStar4"
-            app:layout_constraintTop_toBottomOf="@+id/tvGenre"
-            android:contentDescription="@string/star" />
+            android:layout_marginStart="@dimen/standart_margin"
+            tools:rating="3.5"/>
 
         <TextView
             android:id="@+id/tvCountReview"
@@ -148,7 +109,7 @@
             android:layout_marginStart="@dimen/standart_margin"
             android:gravity="center_vertical|start"
             android:text="@string/review_count_t"
-            app:layout_constraintStart_toEndOf="@+id/ivStar5"
+            app:layout_constraintStart_toEndOf="@+id/rbMovieDetails"
             app:layout_constraintTop_toBottomOf="@+id/tvGenre"
             style="@style/count_review_style"
             android:textStyle="bold"/>
@@ -164,7 +125,7 @@
             android:text="@string/storyline_head_t"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivStar1"
+            app:layout_constraintTop_toBottomOf="@+id/rbMovieDetails"
             style="@style/storyline_head_style"
             android:textStyle="bold"/>
 

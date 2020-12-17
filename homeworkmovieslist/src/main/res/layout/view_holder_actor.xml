@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/ivActor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             app:layout_constraintHorizontal_weight="1"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"

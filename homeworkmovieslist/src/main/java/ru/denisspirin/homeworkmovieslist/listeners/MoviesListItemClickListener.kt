@@ -1,4 +1,4 @@
-package ru.denisspirin.homeworkmovieslist
+package ru.denisspirin.homeworkmovieslist.listeners
 
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
 

@@ -1,12 +1,19 @@
 package ru.denisspirin.homeworkmovieslist.data.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Movie (
-    val image: String,
-    val ageRestriction: Int,
-    val genre: String,
-    val countReview: Int,
+    val id: Int,
     val title: String,
-    val duration: Int,
-    val isLiked: Boolean,
-    val rating: Int
-)
+    val overview: String,
+    val poster: String,
+    val backdrop: String,
+    val ratings: Float,
+    val adult: Boolean,
+    val runtime: Int,
+    val voteCount: Int,
+    val genres: List<Genre>,
+    val actors: List<Actor>
+) : Parcelable

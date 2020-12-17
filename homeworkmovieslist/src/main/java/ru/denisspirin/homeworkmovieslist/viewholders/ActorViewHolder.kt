@@ -5,9 +5,9 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.data.models.Actor
-import ru.denisspirin.homeworkmovieslist.data.models.Movie
 
 class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     // save current context
@@ -18,7 +18,11 @@ class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val tvActor : TextView = view.findViewById(R.id.tvActor)
 
     fun onBind(actor: Actor) {
-        ivActor.setImageResource(context.resources.getIdentifier(actor.image, "drawable", context.packageName))
+        //ivActor.setImageResource(context.resources.getIdentifier("image_mark_ruffalo_actor", "drawable", context.packageName))
         tvActor.text = actor.name
+
+        Glide.with(context)
+                .load(actor.picture)
+                .into(ivActor)
     }
 }

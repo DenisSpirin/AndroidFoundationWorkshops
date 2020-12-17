@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
+import ru.denisspirin.homeworkmovieslist.listeners.MoviesDetailsBackClickListener
+import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
 
 class MainActivity : AppCompatActivity(),
-    MoviesDetailsBackClickListener,
-    MoviesListItemClickListener
+        MoviesDetailsBackClickListener,
+        MoviesListItemClickListener
 {
     private var fragmentMoviesList: FragmentMoviesList? = null
 
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity(),
 
     override fun onClick(movie: Movie) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container, FragmentMoviesDetails(), FragmentMoviesDetails::class.java.simpleName)
+            .replace(R.id.main_container, FragmentMoviesDetails.newInstance(movie), FragmentMoviesDetails::class.java.simpleName)
             .addToBackStack(null)
             .commit()
     }

@@ -5,20 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.adapters.MoviesAdapter
-import ru.denisspirin.homeworkmovieslist.data.models.DataSource
+import ru.denisspirin.homeworkmovieslist.data.loadMovies
+import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
 
 class FragmentMoviesList : Fragment() {
 
-    var movieCard: CardView? = null
     var itemClickListener: MoviesListItemClickListener? = null
     private var recycler: RecyclerView? = null
-    //var fragmentMoviesDetails: FragmentMoviesDetails = FragmentMoviesDetails().apply { setClickListener(this@FragmentMoviesList) }
-    var fragmentMoviesDetails: FragmentMoviesDetails? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,36 +29,9 @@ class FragmentMoviesList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*
-            fragmentMoviesDetails = FragmentMoviesDetails()
-                .apply { setClickListener(this@FragmentMoviesList) }
-            movieCard = view.findViewById<CardView>(R.id.cardView).apply {
-                setOnClickListener {
-                    activity?.supportFragmentManager?.beginTransaction()
-                        ?.add(R.id.main_container, fragmentMoviesDetails!!)
-                        ?.addToBackStack(null)
-                        //?.disallowAddToBackStack()
-                        ?.commit()
-                }
-            }
-        */
         recycler = view.findViewById(R.id.rvMoviesList)
         recycler?.adapter = itemClickListener?.let { MoviesAdapter(it) }
     }
-
-    /*
-    override fun goBack() {
-        if (activity?.supportFragmentManager?.fragments?.size!! > 1) {
-            val lastFragment = activity?.supportFragmentManager?.fragments?.last()
-            activity?.supportFragmentManager?.beginTransaction()
-                ?.apply {
-                    remove(lastFragment!!)
-                    commit()
-                }
-            //activity?.supportFragmentManager?.popBackStack()
-        }
-    }
-    */
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -81,25 +53,9 @@ class FragmentMoviesList : Fragment() {
 
     private fun updateData() {
         (recycler?.adapter as? MoviesAdapter)?.apply {
-            bindMovies(DataSource().getMovies())
+            runBlocking(Dispatchers.IO) {
+                bindMovies(loadMovies(activity?.baseContext!!))
+            }
         }
     }
-
-    /*
-    private fun doOnClick(movie: Movie) {
-        activity?.supportFragmentManager?.beginTransaction()
-            ?.add(R.id.main_container, fragmentMoviesDetails!!)
-            ?.addToBackStack(null)
-            //?.disallowAddToBackStack()
-            ?.commit()
-    }
-    */
-
-    /*
-    private val itemClickListener = object : MoviesListItemClickListener {
-        override fun onClick(movie: Movie) {
-            doOnClick(movie)
-        }
-    }
-    */
 }

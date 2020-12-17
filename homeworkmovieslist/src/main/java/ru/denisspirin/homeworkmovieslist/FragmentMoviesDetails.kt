@@ -5,17 +5,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import ru.denisspirin.homework3uicomponents2.R
+import ru.denisspirin.homework3uicomponents2.R.id.tvGenre
 import ru.denisspirin.homeworkmovieslist.adapters.ActorsAdapter
-import ru.denisspirin.homeworkmovieslist.data.models.DataSource
+import ru.denisspirin.homeworkmovieslist.data.models.Movie
+import ru.denisspirin.homeworkmovieslist.listeners.MoviesDetailsBackClickListener
+import ru.denisspirin.homeworkmovieslist.viewholders.MovieCardViewHolder
 
 class FragmentMoviesDetails : Fragment() {
-
     private var clickListener: MoviesDetailsBackClickListener? = null
     private var recycler: RecyclerView? = null
+    private var movie: Movie? = null
+    private var ivMask: ImageView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,11 +36,9 @@ class FragmentMoviesDetails : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recycler = view.findViewById(R.id.rvActorsList)
+        ivMask = view.findViewById(R.id.ivMask)
         recycler?.adapter = ActorsAdapter()
-    }
-
-    fun setClickListener(listener: MoviesDetailsBackClickListener?) {
-        clickListener = listener
+        movie = arguments?.getParcelable("movie")
     }
 
     override fun onDetach() {
@@ -61,7 +66,45 @@ class FragmentMoviesDetails : Fragment() {
 
     private fun updateData() {
         (recycler?.adapter as? ActorsAdapter)?.apply {
-            bindActors(DataSource().getActors())
+            bindActors(movie?.actors!!)
+        }
+
+        view?.findViewById<TextView>(R.id.tvTitile)?.text = movie?.title
+        view?.findViewById<TextView>(R.id.tvCountReview)?.text = context?.getString(
+            R.string.count_review,
+            movie?.voteCount
+        )
+        view?.findViewById<TextView>(R.id.tvStorylineBody)?.text = movie?.overview
+
+        val tvAgeRestriction: TextView? = view?.findViewById(R.id.tvAge)
+        when (movie?.adult) {
+            true -> tvAgeRestriction?.text = context?.getString(
+                R.string.age_restriction_t,
+                MovieCardViewHolder.ADULT_AGE
+            )
+            false -> tvAgeRestriction?.text = context?.getString(
+                R.string.age_restriction_t,
+                MovieCardViewHolder.OTHER_AGE
+            )
+        }
+
+        view?.findViewById<TextView>(tvGenre)?.text = movie?.genres?.joinToString(
+            separator = ", ",
+            transform = { it -> it.name })
+        view?.findViewById<RatingBar>(R.id.rbMovieDetails)?.rating = movie?.ratings?.div(2)!!
+
+        Glide.with(context)
+            .load(movie?.backdrop)
+            .into(ivMask)
+    }
+
+    companion object {
+        fun newInstance(movie: Movie): FragmentMoviesDetails {
+            val fragment = FragmentMoviesDetails()
+            val bundle = Bundle()
+            bundle.putParcelable("movie", movie)
+            fragment.arguments = bundle
+            return fragment
         }
     }
 }
