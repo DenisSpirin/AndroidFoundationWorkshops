@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="movie_card_rating_bar_start">6dp</dimen>
+    <dimen name="movie_card_width">166dp</dimen>
+    <dimen name="movie_card_title_start">8dp</dimen>
+
     <dimen name="standart_margin">16dp</dimen>
     <dimen name="storyline_top">16dp</dimen>
     <dimen name="star_top">3dp</dimen>

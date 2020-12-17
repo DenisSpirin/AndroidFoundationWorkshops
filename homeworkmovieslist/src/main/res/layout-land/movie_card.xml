@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_gravity="center_horizontal"
-    android:layout_width="wrap_content"
+    android:layout_width="@dimen/movie_card_width"
     android:layout_height="wrap_content"
     android:layout_marginTop="11dp"
     android:layout_marginBottom="11dp"
@@ -17,9 +17,10 @@
 
         <ImageView
             android:id="@+id/ivMovie"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/movie_card_width"
             android:layout_height="wrap_content"
             android:contentDescription="@string/movie_s_image"
+            tools:src="@drawable/image_avengers_end_game_card"
             android:foreground="@drawable/gradient"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
@@ -58,62 +59,9 @@
             android:text="@string/genre_t"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintBottom_toBottomOf="@id/ivMovie"
-            android:layout_marginStart="6dp"
+            android:layout_marginStart="@dimen/movie_card_rating_bar_start"
             android:layout_marginBottom="22dp"
             android:textAppearance="@style/tag" />
-
-        <!--
-        <ImageView
-            android:id="@+id/ivStar1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_icon_small"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="6dp"
-            card_view:layout_constraintStart_toStartOf="@id/ivMovie"
-            card_view:layout_constraintTop_toBottomOf="@id/tvGenre"
-            android:contentDescription="@string/star"/>
-
-        <ImageView
-            android:id="@+id/ivStar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_icon_small"
-            android:layout_marginTop="4dp"
-            card_view:layout_constraintStart_toEndOf="@id/ivStar1"
-            card_view:layout_constraintTop_toBottomOf="@id/tvGenre"
-            android:contentDescription="@string/star"/>
-
-        <ImageView
-            android:id="@+id/ivStar3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_icon_small"
-            android:layout_marginTop="4dp"
-            card_view:layout_constraintStart_toEndOf="@id/ivStar2"
-            card_view:layout_constraintTop_toBottomOf="@id/tvGenre"
-            android:contentDescription="@string/star"/>
-
-        <ImageView
-            android:id="@+id/ivStar4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_icon_small"
-            android:layout_marginTop="4dp"
-            card_view:layout_constraintStart_toEndOf="@id/ivStar3"
-            card_view:layout_constraintTop_toBottomOf="@id/tvGenre"
-            android:contentDescription="@string/star" />
-
-        <ImageView
-            android:id="@+id/ivStar5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_star_icon_gray_small"
-            android:layout_marginTop="4dp"
-            card_view:layout_constraintStart_toEndOf="@id/ivStar4"
-            card_view:layout_constraintTop_toBottomOf="@id/tvGenre"
-            android:contentDescription="@string/star"/>
-        -->
 
         <RatingBar
             android:id="@+id/rbMovieCard"
@@ -123,7 +71,7 @@
             card_view:layout_constraintStart_toStartOf="@+id/ivMovie"
             card_view:layout_constraintTop_toBottomOf="@+id/tvGenre"
             android:layout_marginTop="4dp"
-            android:layout_marginStart="@dimen/standart_margin"
+            android:layout_marginStart="@dimen/movie_card_rating_bar_start"
             tools:rating="3.5"/>
 
         <TextView
@@ -147,7 +95,7 @@
             android:gravity="center_vertical|start"
             android:text="@string/movie_title_t"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/movie_card_title_start"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@id/ivMovie"
             android:textStyle="bold" />
@@ -159,7 +107,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical|start"
             android:text="@string/movie_duration_t"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/movie_card_title_start"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
             android:textStyle="bold" />
