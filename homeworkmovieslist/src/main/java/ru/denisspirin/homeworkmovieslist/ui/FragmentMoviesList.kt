@@ -1,4 +1,4 @@
-package ru.denisspirin.homeworkmovieslist
+package ru.denisspirin.homeworkmovieslist.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -31,6 +33,9 @@ class FragmentMoviesList : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById(R.id.rvMoviesList)
         recycler?.adapter = itemClickListener?.let { MoviesAdapter(it) }
+        recycler?.addItemDecoration(
+            MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.movie_card_item_margin))
+        )
     }
 
     override fun onAttach(context: Context) {

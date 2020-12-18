@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_double_oval"
-        android:layout_marginStart="@dimen/standart_margin"
+        android:layout_marginStart="@dimen/movie_details_standart_margin"
         android:layout_marginTop="@dimen/oval_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -41,9 +41,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivDoubleOval"
         android:layout_marginTop="@dimen/movie_top"
-        android:paddingStart="@dimen/movie_start"
-        android:paddingEnd="@dimen/movie_end"
-        android:paddingBottom="100dp"
+        android:paddingStart="@dimen/movie_list_horizontal_padding"
+        android:paddingEnd="@dimen/movie_list_horizontal_padding"
+        android:paddingBottom="@dimen/movie_list_bottom_padding"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

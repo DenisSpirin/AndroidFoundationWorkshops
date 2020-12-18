@@ -3,18 +3,27 @@
     <dimen name="movie_card_rating_bar_start">6dp</dimen>
     <dimen name="movie_card_width">166dp</dimen>
     <dimen name="movie_card_title_start">8dp</dimen>
+    <dimen name="movie_card_item_margin">13dp</dimen>
 
-    <dimen name="standart_margin">16dp</dimen>
+    <dimen name="movie_list_horizontal_padding">14dp</dimen>
+    <dimen name="movie_list_bottom_padding">100dp</dimen>
+
+    <dimen name="movie_details_poster_height">240dp</dimen>
+    <dimen name="movie_details_back_button_start">18dp</dimen>
+    <dimen name="movie_details_back_button_top">46dp</dimen>
+    <dimen name="movie_details_back_button_text_start">32dp</dimen>
+    <dimen name="movie_details_age_info_start">18dp</dimen>
+    <dimen name="movie_details_age_info_top">206dp</dimen>
+    <dimen name="movie_details_standart_margin">16dp</dimen>
+    <dimen name="movie_details_rating_bar_top">3dp</dimen>
+    <dimen name="movie_details_actor_list_horizontal">8dp</dimen>
+
     <dimen name="storyline_top">16dp</dimen>
-    <dimen name="star_top">3dp</dimen>
     <dimen name="image_margin">3dp</dimen>
-    <dimen name="preview_image_height">240dp</dimen>
     <dimen name="oval_top">56dp</dimen>
     <dimen name="movies_list_top">55dp</dimen>
     <dimen name="movies_list_start">8dp</dimen>
     <dimen name="movie_top">18dp</dimen>
-    <dimen name="movie_start">12dp</dimen>
-    <dimen name="movie_end">12dp</dimen>
     <dimen name="genre_start">18dp</dimen>
     <dimen name="genre_top">316dp</dimen>
     <dimen name="star_top_2">332dp</dimen>

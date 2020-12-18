@@ -6,6 +6,8 @@ import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
 import ru.denisspirin.homeworkmovieslist.listeners.MoviesDetailsBackClickListener
 import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
+import ru.denisspirin.homeworkmovieslist.ui.FragmentMoviesDetails
+import ru.denisspirin.homeworkmovieslist.ui.FragmentMoviesList
 
 class MainActivity : AppCompatActivity(),
         MoviesDetailsBackClickListener,

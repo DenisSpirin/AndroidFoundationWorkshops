@@ -1,4 +1,4 @@
-package ru.denisspirin.homeworkmovieslist
+package ru.denisspirin.homeworkmovieslist.ui
 
 import android.content.Context
 import android.os.Bundle
