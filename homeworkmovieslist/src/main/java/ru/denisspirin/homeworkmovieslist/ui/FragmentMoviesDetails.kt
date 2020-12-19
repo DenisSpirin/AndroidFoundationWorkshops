@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -23,6 +24,7 @@ class FragmentMoviesDetails : Fragment() {
     private var recycler: RecyclerView? = null
     private var movie: Movie? = null
     private var ivMask: ImageView? = null
+    private var tvCast: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,8 +39,11 @@ class FragmentMoviesDetails : Fragment() {
 
         recycler = view.findViewById(R.id.rvActorsList)
         ivMask = view.findViewById(R.id.ivMask)
+        tvCast = view?.findViewById(R.id.tvCast)
+
         recycler?.adapter = ActorsAdapter()
         movie = arguments?.getParcelable("movie")
+        tvCast?.isVisible = (movie?.actors?.size!! > 0)
     }
 
     override fun onDetach() {
