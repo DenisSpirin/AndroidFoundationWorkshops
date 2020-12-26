@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ru.denisspirin.homework3uicomponents2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ru.denisspirin.homework3uicomponents2">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="false"
@@ -8,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:name="ru.denisspirin.homeworkmovieslist.MoviesApplication"
+        tools:targetApi="m">
         <activity android:name="ru.denisspirin.homeworkmovieslist.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
