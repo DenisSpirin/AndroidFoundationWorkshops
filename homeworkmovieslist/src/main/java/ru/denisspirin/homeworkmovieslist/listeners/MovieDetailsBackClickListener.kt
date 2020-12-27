@@ -1,5 +1,5 @@
 package ru.denisspirin.homeworkmovieslist.listeners
 
-interface MoviesDetailsBackClickListener {
+interface MovieDetailsBackClickListener {
     fun goBack()
 }

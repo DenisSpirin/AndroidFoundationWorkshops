@@ -10,19 +10,25 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homework3uicomponents2.R.id.tvGenre
 import ru.denisspirin.homeworkmovieslist.adapters.ActorsAdapter
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
-import ru.denisspirin.homeworkmovieslist.listeners.MoviesDetailsBackClickListener
-import ru.denisspirin.homeworkmovieslist.viewholders.MovieCardViewHolder
+import ru.denisspirin.homeworkmovieslist.listeners.MovieDetailsBackClickListener
+import ru.denisspirin.homeworkmovieslist.ui.viewholders.MovieCardViewHolder
+import ru.denisspirin.homeworkmovieslist.viewmodels.MovieDetailViewModel
+import ru.denisspirin.homeworkmovieslist.viewmodels.MovieDetailViewModelFactory
 
-class FragmentMoviesDetails : Fragment() {
-    private var clickListener: MoviesDetailsBackClickListener? = null
+class FragmentMovieDetails : Fragment(), Observer<Movie> {
+    private val viewModel: MovieDetailViewModel by viewModels { MovieDetailViewModelFactory() }
+    private var clickListener: MovieDetailsBackClickListener? = null
     private var recycler: RecyclerView? = null
-    private var movie: Movie? = null
+    //private var movie: Movie? = null
+    private var movieId: Int? = null
     private var ivMask: ImageView? = null
     private var tvCast: TextView? = null
 
@@ -39,11 +45,12 @@ class FragmentMoviesDetails : Fragment() {
 
         recycler = view.findViewById(R.id.rvActorsList)
         ivMask = view.findViewById(R.id.ivMask)
-        tvCast = view?.findViewById(R.id.tvCast)
+        tvCast = view.findViewById(R.id.tvCast)
+
+        viewModel.movie.observe(viewLifecycleOwner, this::onChanged)
 
         recycler?.adapter = ActorsAdapter()
-        movie = arguments?.getParcelable("movie")
-        tvCast?.isVisible = (movie?.actors?.size!! > 0)
+        movieId = arguments?.getInt("movie")
     }
 
     override fun onDetach() {
@@ -58,18 +65,18 @@ class FragmentMoviesDetails : Fragment() {
         view?.findViewById<TextView>(R.id.tvBack)?.setOnClickListener { clickListener?.goBack()}
         view?.findViewById<TextView>(R.id.tvBackDir)?.setOnClickListener { clickListener?.goBack() }
 
-        updateData()
+        viewModel.updateData(movieId)
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        if (context is MoviesDetailsBackClickListener) {
+        if (context is MovieDetailsBackClickListener) {
             clickListener = context
         }
     }
 
-    private fun updateData() {
+    private fun updateData(movie: Movie?) {
         (recycler?.adapter as? ActorsAdapter)?.apply {
             bindActors(movie?.actors!!)
         }
@@ -98,16 +105,22 @@ class FragmentMoviesDetails : Fragment() {
             transform = { it -> it.name })
         view?.findViewById<RatingBar>(R.id.rbMovieDetails)?.rating = movie?.ratings?.div(2)!!
 
+        tvCast?.isVisible = movie.actors.isNotEmpty()
+
         Glide.with(context)
-            .load(movie?.backdrop)
+            .load(movie.backdrop)
             .into(ivMask)
     }
 
+    override fun onChanged(movie: Movie?) {
+        updateData(movie)
+    }
+
     companion object {
-        fun newInstance(movie: Movie): FragmentMoviesDetails {
-            val fragment = FragmentMoviesDetails()
+        fun newInstance(movieId: Int): FragmentMovieDetails {
+            val fragment = FragmentMovieDetails()
             val bundle = Bundle()
-            bundle.putParcelable("movie", movie)
+            bundle.putInt("movie", movieId)
             fragment.arguments = bundle
             return fragment
         }

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
-import ru.denisspirin.homeworkmovieslist.viewholders.MovieCardViewHolder
+import ru.denisspirin.homeworkmovieslist.ui.viewholders.MovieCardViewHolder
 
 class MoviesAdapter(
     private val itemClickListener: MoviesListItemClickListener
@@ -23,7 +23,7 @@ class MoviesAdapter(
     override fun onBindViewHolder(holder: MovieCardViewHolder, position: Int) {
         holder.onBind(movies[position])
         // todo setOnClickListener
-        holder.itemView.setOnClickListener { itemClickListener.onClick(movies[position]) }
+        holder.itemView.setOnClickListener { itemClickListener.onClick(movies[position].id) }
     }
 
     fun bindMovies(newMovies: List<Movie>) {

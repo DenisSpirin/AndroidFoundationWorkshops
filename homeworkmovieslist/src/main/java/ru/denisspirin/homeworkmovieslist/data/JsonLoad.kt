@@ -90,25 +90,20 @@ internal suspend fun loadMovies(context: Context): List<Movie> = withContext(Dis
     parseMovies(data, genresMap, actorsMap)
 }
 
-internal fun loadMoviesSync(context: Context): List<Movie> {
-    val genresMap = loadGenres(context)
-    val actorsMap = loadActors(context)
-
-    val data = readAssetFileToString(context, "data.json")
-    return parseMovies(data, genresMap, actorsMap)
-}
-
 internal fun parseMovies(
     data: String,
     genres: List<Genre>,
-    actors: List<Actor>
+    actors: List<Actor>,
+    movieId: Int? = null
 ): List<Movie> {
     val genresMap = genres.associateBy { it.id }
     val actorsMap = actors.associateBy { it.id }
 
     val jsonMovies = jsonFormat.decodeFromString<List<JsonMovie>>(data)
 
-    return jsonMovies.map { jsonMovie ->
+    return jsonMovies
+        .filter { if (movieId == null) {true} else {it.id == movieId} }
+        .map { jsonMovie ->
         Movie(
             id = jsonMovie.id,
             title = jsonMovie.title,
@@ -127,4 +122,12 @@ internal fun parseMovies(
             }
         )
     }
+}
+
+internal suspend fun loadMovie(context: Context, movieId: Int): Movie = withContext(Dispatchers.IO) {
+    val genresMap = loadGenres(context)
+    val actorsMap = loadActors(context)
+
+    val data = readAssetFileToString(context, "data.json")
+    parseMovies(data, genresMap, actorsMap, movieId).first()
 }

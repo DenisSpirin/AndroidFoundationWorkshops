@@ -3,14 +3,13 @@ package ru.denisspirin.homeworkmovieslist
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.denisspirin.homework3uicomponents2.R
-import ru.denisspirin.homeworkmovieslist.data.models.Movie
-import ru.denisspirin.homeworkmovieslist.listeners.MoviesDetailsBackClickListener
+import ru.denisspirin.homeworkmovieslist.listeners.MovieDetailsBackClickListener
 import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
-import ru.denisspirin.homeworkmovieslist.ui.FragmentMoviesDetails
+import ru.denisspirin.homeworkmovieslist.ui.FragmentMovieDetails
 import ru.denisspirin.homeworkmovieslist.ui.FragmentMoviesList
 
 class MainActivity : AppCompatActivity(),
-        MoviesDetailsBackClickListener,
+        MovieDetailsBackClickListener,
         MoviesListItemClickListener
 {
     private var fragmentMoviesList: FragmentMoviesList? = null
@@ -36,15 +35,14 @@ class MainActivity : AppCompatActivity(),
         supportFragmentManager.popBackStack()
     }
 
-    override fun onClick(movie: Movie) {
+    override fun onClick(movieId: Int) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container, FragmentMoviesDetails.newInstance(movie), FragmentMoviesDetails::class.java.simpleName)
+            .replace(R.id.main_container, FragmentMovieDetails.newInstance(movieId), FragmentMovieDetails::class.java.simpleName)
             .addToBackStack(null)
             .commit()
     }
 
     companion object {
         const val MOVIE_LIST_FRAGMENT_TAG = "FragmentMoviesList"
-        const val MOVIE_DETAILS_FRAGMENT_TAG = "FragmentMoviesDetails"
     }
 }

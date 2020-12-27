@@ -1,4 +1,4 @@
-package ru.denisspirin.homeworkmovieslist.viewholders
+package ru.denisspirin.homeworkmovieslist.ui.viewholders
 
 import android.content.Context
 import android.view.View
@@ -18,7 +18,6 @@ class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val tvActor : TextView = view.findViewById(R.id.tvActor)
 
     fun onBind(actor: Actor) {
-        //ivActor.setImageResource(context.resources.getIdentifier("image_mark_ruffalo_actor", "drawable", context.packageName))
         tvActor.text = actor.name
 
         Glide.with(context)
