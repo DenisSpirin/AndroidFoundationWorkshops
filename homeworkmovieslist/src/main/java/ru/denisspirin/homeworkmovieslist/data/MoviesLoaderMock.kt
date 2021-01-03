@@ -5,7 +5,7 @@ import kotlinx.coroutines.runBlocking
 import ru.denisspirin.homeworkmovieslist.data.loadMovies
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
 
-class MoviesLoader(
+class MoviesLoaderMock(
     private val context: Context
         ) {
     private var movies: List<Movie>? = null

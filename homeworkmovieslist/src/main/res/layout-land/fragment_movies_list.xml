@@ -46,4 +46,13 @@
         android:paddingBottom="@dimen/movie_list_bottom_padding"
         />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDoubleOval"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

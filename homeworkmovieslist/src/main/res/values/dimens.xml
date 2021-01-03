@@ -16,6 +16,7 @@
     <dimen name="movie_details_age_info_top">206dp</dimen>
     <dimen name="movie_details_standart_margin">16dp</dimen>
     <dimen name="movie_details_rating_bar_top">3dp</dimen>
+    <dimen name="movie_details_rating_bar_height">25dp</dimen>
     <dimen name="movie_details_actor_list_horizontal">8dp</dimen>
 
     <dimen name="storyline_top">16dp</dimen>

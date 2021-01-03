@@ -20,8 +20,10 @@ class ActorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun onBind(actor: Actor) {
         tvActor.text = actor.name
 
-        Glide.with(context)
+        if (actor.picture != null) {
+            Glide.with(context)
                 .load(actor.picture)
                 .into(ivActor)
+        }
     }
 }
