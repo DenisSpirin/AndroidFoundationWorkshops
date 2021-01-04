@@ -14,7 +14,6 @@ import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.adapters.MoviesAdapter
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
 import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
-import ru.denisspirin.homeworkmovieslist.ui.viewholders.MovieCardViewHolder
 import ru.denisspirin.homeworkmovieslist.viewmodels.MoviesListViewModelMovieDB
 
 class FragmentMoviesList : Fragment(), Observer<List<Movie>> {
@@ -71,10 +70,10 @@ class FragmentMoviesList : Fragment(), Observer<List<Movie>> {
         (recycler?.adapter as? MoviesAdapter)?.bindMovies(movies!!)
     }
 
-    fun setLoading(isLoading: Boolean) {
+    private fun setLoading(isLoading: Boolean) {
         when (isLoading) {
-            true -> progressBar?.setVisibility(View.VISIBLE)
-            false -> progressBar?.setVisibility(View.INVISIBLE)
+            true -> progressBar?.visibility = View.VISIBLE
+            false -> progressBar?.visibility = View.INVISIBLE
         }
     }
 }
