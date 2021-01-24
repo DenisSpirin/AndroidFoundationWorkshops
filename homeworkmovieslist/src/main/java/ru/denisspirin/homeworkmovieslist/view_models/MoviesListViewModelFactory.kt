@@ -1,15 +1,16 @@
-package ru.denisspirin.homeworkmovieslist.viewmodels
+package ru.denisspirin.homeworkmovieslist.view_models
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import ru.denisspirin.homeworkmovieslist.MoviesApplication
-import ru.denisspirin.homeworkmovieslist.data.MoviesLoaderMock
+import ru.denisspirin.homeworkmovieslist.db.MoviesRepository
 
-class MovieDetailViewModelMockFactory : ViewModelProvider.Factory {
+class MoviesListViewModelFactory : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T = when (modelClass) {
-        MovieDetailViewModelMock::class.java -> MovieDetailViewModelMock(MoviesLoaderMock(MoviesApplication.instance.applicationContext))
+        MoviesListViewModel::class.java -> MoviesListViewModel(MoviesRepository(
+            MoviesApplication.instance.applicationContext))
         else -> throw IllegalArgumentException("$modelClass is not registered ViewModel")
     } as T
 }

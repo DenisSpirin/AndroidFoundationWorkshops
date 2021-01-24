@@ -7,7 +7,7 @@ import ru.denisspirin.homeworkmovieslist.data.models.Movie
 import ru.denisspirin.homeworkmovieslist.data.models.mdb.ConfigurationResponse
 import ru.denisspirin.homeworkmovieslist.data.models.mdb.GenresResponse
 
-class MoviesLoaderMovieDB {
+class MoviesLoader {
     private val networkModule = MovieDBNetworkModule()
     private var configurationResponse: ConfigurationResponse? = null
     private var genresResponse: GenresResponse? = null

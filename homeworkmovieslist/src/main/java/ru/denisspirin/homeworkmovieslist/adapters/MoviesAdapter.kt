@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.denisspirin.homework3uicomponents2.R
 import ru.denisspirin.homeworkmovieslist.listeners.MoviesListItemClickListener
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
-import ru.denisspirin.homeworkmovieslist.ui.viewholders.MovieCardViewHolder
+import ru.denisspirin.homeworkmovieslist.ui.view_holders.MovieCardViewHolder
 
 class MoviesAdapter(
     private val itemClickListener: MoviesListItemClickListener

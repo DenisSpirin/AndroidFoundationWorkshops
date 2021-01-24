@@ -12,7 +12,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.denisspirin.homework3uicomponents2.R
@@ -20,15 +19,13 @@ import ru.denisspirin.homework3uicomponents2.R.id.tvGenre
 import ru.denisspirin.homeworkmovieslist.adapters.ActorsAdapter
 import ru.denisspirin.homeworkmovieslist.data.models.Movie
 import ru.denisspirin.homeworkmovieslist.listeners.MovieDetailsBackClickListener
-import ru.denisspirin.homeworkmovieslist.ui.viewholders.MovieCardViewHolder
-import ru.denisspirin.homeworkmovieslist.viewmodels.MovieDetailViewModel
-import ru.denisspirin.homeworkmovieslist.viewmodels.MovieDetailViewModelMock
-import ru.denisspirin.homeworkmovieslist.viewmodels.MovieDetailViewModelMockFactory
-import ru.denisspirin.homeworkmovieslist.viewmodels.MoviesListViewModelMovieDB
+import ru.denisspirin.homeworkmovieslist.ui.view_holders.MovieCardViewHolder
+import ru.denisspirin.homeworkmovieslist.view_models.MovieDetailViewModel
+import ru.denisspirin.homeworkmovieslist.view_models.MovieDetailViewModelFactory
 
 class FragmentMovieDetails : Fragment(), Observer<Movie> {
-    //private val viewModel: MovieDetailViewModelMock by viewModels { MovieDetailViewModelMockFactory() }
-    private var viewModel: MovieDetailViewModel? = null
+    private val viewModel: MovieDetailViewModel by viewModels { MovieDetailViewModelFactory() }
+    //private var viewModel: MovieDetailViewModel? = null
     private var clickListener: MovieDetailsBackClickListener? = null
     private var recycler: RecyclerView? = null
     //private var movie: Movie? = null
@@ -51,8 +48,8 @@ class FragmentMovieDetails : Fragment(), Observer<Movie> {
         ivMask = view.findViewById(R.id.ivMask)
         tvCast = view.findViewById(R.id.tvCast)
 
-        viewModel = ViewModelProvider(this).get(MovieDetailViewModel::class.java)
-        viewModel?.movie?.observe(viewLifecycleOwner, this::onChanged)
+        //viewModel = ViewModelProvider(this).get(MovieDetailViewModel::class.java)
+        viewModel.movie.observe(viewLifecycleOwner, this::onChanged)
 
         recycler?.adapter = ActorsAdapter()
         movieId = arguments?.getInt("movie")
@@ -70,7 +67,7 @@ class FragmentMovieDetails : Fragment(), Observer<Movie> {
         view?.findViewById<TextView>(R.id.tvBack)?.setOnClickListener { clickListener?.goBack()}
         view?.findViewById<TextView>(R.id.tvBackDir)?.setOnClickListener { clickListener?.goBack() }
 
-        viewModel?.updateData(movieId!!)
+        viewModel.updateData(movieId!!)
     }
 
     override fun onAttach(context: Context) {
