@@ -17,11 +17,12 @@ class MovieDetailViewModel(
     private val _mutableMovie =  MutableLiveData<Movie>()
     val movie: LiveData<Movie> get() = _mutableMovie
 
+    /*
     private fun saveData(movie: Movie) {
         viewModelScope.launch {
             moviesRepository.addActorsForMovie(movie.id, movie.actors)
         }
-    }
+    }*/
 
     fun updateData(movieId: Int) {
         viewModelScope.launch {
@@ -30,7 +31,7 @@ class MovieDetailViewModel(
             val loadedMovie = moviesLoader.getMovieDetail(movieId)
             _mutableMovie.value = loadedMovie
 
-            saveData(loadedMovie)
+            //saveData(loadedMovie)
         }
     }
 }

@@ -8,7 +8,7 @@ import ru.denisspirin.homeworkmovieslist.db.dao.ActorDao
 import ru.denisspirin.homeworkmovieslist.db.dao.GenreDao
 import ru.denisspirin.homeworkmovieslist.db.dao.MovieDao
 
-@Database(entities = [DbGenre::class, DbMovie::class, DbActor::class, DbMovieGenre::class, DbMovieActor::class], version = 6)
+@Database(entities = [DbGenre::class, DbMovie::class, DbActor::class, DbMovieGenre::class, DbMovieActor::class], version = 9)
 abstract class MoviesDatabase : RoomDatabase() {
 
     abstract val genreDao: GenreDao

@@ -109,9 +109,9 @@ class FragmentMovieDetails : Fragment(), Observer<Movie> {
 
         tvCast?.isVisible = movie.actors.isNotEmpty()
 
-        Glide.with(context)
+        Glide.with(requireContext())
             .load(movie.backdrop)
-            .into(ivMask)
+            .into(ivMask!!)
     }
 
     override fun onChanged(movie: Movie?) {

@@ -23,12 +23,14 @@ class MoviesListViewModel(
         updateData()
     }
 
+    /*
     private fun saveData(movies: List<Movie>) {
         viewModelScope.launch {
             moviesRepository.clearDatabase()
             moviesRepository.addAllMovies(movies)
         }
     }
+    */
 
     private fun updateData() {
         viewModelScope.launch {
@@ -41,7 +43,7 @@ class MoviesListViewModel(
 
             _isLoading.value = false
 
-            saveData(newMoviesList)
+            //saveData(newMoviesList)
         }
     }
 }
